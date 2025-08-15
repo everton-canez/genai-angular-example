@@ -1,0 +1,69 @@
+# See https://angular.io/guide/build#gitignore-recommendations
+# Angular build and development artifacts
+/dist/
+/tmp/
+/out-tsc/
+
+# Node dependencies
+/node_modules/
+
+# IDE and editor folders
+/.idea/
+/.vscode/
+
+# Compiled output
+*.js
+*.js.map
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Angular specific
+coverage/
+
+# Misc
+.sass-cache/
+/connect.lock
+/coverage/
+/libpeerconnection.log
+/testem.log
+/typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+yarn.lock
+
+# Angular SSR
+/browser/
+
+# Firebase
+.firebase/
+
+# Others
+*.swp
+*.swo
