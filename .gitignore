@@ -10,6 +10,7 @@
 # IDE and editor folders
 /.idea/
 /.vscode/
+/.angular/
 
 # Compiled output
 *.js
