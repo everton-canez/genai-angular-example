@@ -9,6 +9,7 @@ import "dotenv/config";
 import express from "express";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+const cors = require("cors");
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -19,6 +20,13 @@ const browserDistFolder = resolve(serverDistFolder, "../browser");
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+const corsOptions = {
+  origin: "http://localhost:4200", //(https://your-client-app.com)
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -58,7 +66,7 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.use("/**", (req, res, next) => {
+app.use("", (req, res, next) => {
   angularApp
     .handle(req)
     .then((response) =>
