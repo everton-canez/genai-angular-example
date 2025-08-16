@@ -5,6 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from "@angular/ssr/node";
 import { GoogleGenAI } from "@google/genai";
+import { default as cors } from "cors";
 import "dotenv/config";
 import express from "express";
 import { dirname, resolve } from "node:path";
@@ -19,6 +20,13 @@ const browserDistFolder = resolve(serverDistFolder, "../browser");
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+const corsOptions = {
+  origin: "http://localhost:4200", //(https://your-client-app.com)
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 /**
  * Example Express Rest API endpoints can be defined here.
