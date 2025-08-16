@@ -52,8 +52,21 @@ app.use(cors(corsOptions));
 //     });
 // });
 
-let response =
-  "Artificial intelligence (AI) is transforming the world in unprecedented ways, revolutionizing industries, enhancing productivity, and enabling new forms of creativity. At its core, AI refers to the simulation of human intelligence in machines that are programmed to think, learn, and solve problems. Modern AI systems leverage vast amounts of data, advanced algorithms, and powerful computing resources to perform tasks  that once required human expertise. \nOne of the most significant breakthroughs in AI has been the development of deep learning, a subset of machine learning that uses neural networks with many layers. Deep learning models have achieved remarkable success in areas such as image recognition, natural language processing, and autonomous vehicles. For example, AI-powered medical imaging systems can detect diseases with accuracy comparable to or even surpassing human doctors, while language models can generate coherent and contextually relevant text, translate languages, and answer complex questions. AI is also driving innovation in robotics, enabling machines to navigate complex environments, manipulate objects, and interact with humans in natural ways. In manufacturing, AI-powered robots are improving efficiency and safety, while in agriculture, AI systems are optimizing crop yields and resource usage. The integration of AI into everyday devices, such as smartphones and smart home assistants, is making technology more intuitive and accessible. \nHowever, the rapid advancement of AI raises important ethical and societal questions. Issues such as bias in algorithms, data privacy, and the impact of automation on jobs require careful consideration and responsible governance. Researchers and policymakers are working to ensure that AI technologies are developed and deployed in ways that are fair, transparent, and beneficial to all. \n In summary, AI is a powerful tool that holds immense promise for the future. By harnessing its capabilities responsibly, we can address some of the world’s most pressing challenges and unlock new opportunities for growth and discovery.";
+let response = `  Artificial intelligence (AI) is transforming the world in unprecedented ways, revolutionizing industries, enhancing productivity, and enabling new forms of creativity. At its core, AI refers to the simulation of human intelligence in machines that are programmed to think, learn, and solve problems. Modern AI systems leverage vast amounts of data, advanced algorithms, 
+and powerful computing resources to perform tasks  that once required human expertise. 
+ 
+  One of the most significant breakthroughs in AI has been the development of deep learning, a subset of machine learning that uses neural networks with many layers. Deep learning models have achieved remarkable 
+success in areas such as image recognition, natural language processing, and autonomous vehicles. For example, AI-powered medical imaging systems can detect diseases with accuracy comparable to or even surpassing 
+human doctors, while language models can generate coherent and contextually relevant text, translate languages, and answer complex questions. AI is also driving innovation in robotics, enabling machines to navigate
+complex environments, manipulate objects, and interact with humans in natural ways. In manufacturing, AI-powered robots are improving efficiency and safety, while in agriculture, AI systems are optimizing crop yields
+and resource usage. 
+ 
+  The integration of AI into everyday devices, such as smartphones and smart home assistants, is making technology more intuitive and accessible. However, the rapid advancement of AI raises important
+ethical and societal questions. Issues such as bias in algorithms, data privacy, and the impact of automation on jobs require careful consideration and responsible governance. Researchers and policymakers are working to 
+ensure that AI technologies are developed and deployed in ways that are fair, transparent, and beneficial to all. 
+ 
+  In summary, AI is a powerful tool that holds immense promise for the future. By harnessing its capabilities responsibly, 
+we can address some of the world’s most pressing challenges and unlock new opportunities for growth and discovery.`;
 
 function getAIResponse(): Promise<Uint8Array<ArrayBuffer>> {
   // const responseArray = [{ text: response.split(" ") }];

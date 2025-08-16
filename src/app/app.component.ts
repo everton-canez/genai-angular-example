@@ -22,9 +22,7 @@ export class AppComponent {
 
   characters = resource({
     stream: async () => {
-      const chars = signal<CharactersType>({
-        value: "",
-      });
+      const chars = signal<CharactersType>({ value: "" });
       fetch(this.url).then(async (response) => {
         if (!response.body) return;
 
@@ -34,45 +32,13 @@ export class AppComponent {
             if ("value" in prev) {
               return { value: `${prev.value} ${chunkText}` };
             } else {
-              return { value: "", error: `${chunkText}` };
+              return { value: "", error: chunkText };
             }
           });
-
-          // this.data.update((prev): any => {
-          //   if ("value" in prev) {
-          //     return { value: `${prev.value} ${chunkText}` };
-          //   } else {
-          //     return { error: chunkText };
-          //   }
-          // });
         }
       });
 
       return chars;
     },
   });
-
-  //   readonly resource = rxResource({
-  //   stream: () => {
-  //     return this.http.get<any>(this.url).pipe(
-  //       map(async (response) => {
-  //         if (!response.body) return;
-  //         for await (const chunk of response.body) {
-  //           const chunkText = this.decoder.decode(chunk);
-
-  //           this.data.update((prev) => {
-  //             if ("value" in prev) {
-  //               console.log({ value: `${prev.value} ${chunkText}` });
-  //               return { value: `${prev.value} ${chunkText}` };
-  //             } else {
-  //               return { error: chunkText };
-  //             }
-  //           });
-  //         },
-  //       })
-  //     );
-  //   },
-
-  //   defaultValue: undefined,
-  // });
 }

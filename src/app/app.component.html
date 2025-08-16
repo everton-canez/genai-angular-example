@@ -1,8 +1,1 @@
-<!-- @let chars = this.chars(); characters: -->
-<!-- <pre>{{ characters.value() }} </pre> -->
-
-<pre>{{ characters.value() }}</pre>
-
-<!-- <pre>
-  {{ characters.value() }}
-</pre> -->
+<pre [innerHTML]="characters.value()"></pre>
