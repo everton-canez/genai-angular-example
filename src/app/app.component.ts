@@ -10,6 +10,7 @@ import {
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
@@ -18,7 +19,7 @@ export class AppComponent {
   readonly http = inject(HttpClient);
 
   characters = resource({
-    loader: async () => {
+    stream: async () => {
       const data = signal<{ value: string } | { error: unknown }>({
         value: "",
       });
