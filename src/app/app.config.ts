@@ -4,7 +4,7 @@ import {
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
 
-import { provideHttpClient, withFetch } from "@angular/common/http";
+import { provideHttpClient } from "@angular/common/http";
 import {
   provideClientHydration,
   withEventReplay,
@@ -13,7 +13,7 @@ import { routes } from "./app.routes";
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(withFetch()),
+    provideHttpClient(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
